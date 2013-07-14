@@ -1,0 +1,10 @@
+parse = stmts
+
+stmts = { stmt }                   # (1)
+
+stmt = output
+
+output = "♪", expr    
+       | "✍", expr
+       | expr
+# (略)

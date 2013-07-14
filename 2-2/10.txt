@@ -1,0 +1,40 @@
+parse = stmts
+
+stmts = { stmt }
+
+stmt = output
+
+output = "♪", expr
+       | "✍", expr
+       | while
+
+while = "♺", expr, "☞", stmts, "♘"
+      | expr
+
+expr = if
+
+if = "✈", expr, "☺", stmts, "☹", stmts, "☻"
+   | "✈", expr, "☺", stmts, "☻"
+   | additive
+
+additive = multiple, "＋", expr  
+         | multiple, "−", expr
+         | multiple
+
+multiple = number, "×", multiple
+         | number, "÷", multiple
+         | number
+
+variable = var, "☜", expr  
+         | var
+         | number 
+
+var = "✪"
+    | "✩"
+    | "✷"
+    | "✲"
+
+number = "①"
+       | "②"
+        (中略)
+       | "⑩"

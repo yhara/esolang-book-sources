@@ -1,0 +1,24 @@
+# (略)
+expr = additive  
+
+additive = multiple, "＋", expr 
+         | multiple, "−", expr
+         | multiple
+
+multiple = number, "×", multiple
+         | number, "÷", multiple
+         | variable
+
+variable = var, "☜", expr  
+         | var
+         | number 
+
+var = "✪"
+    | "✩"
+    | "✷"
+    | "✲"
+
+number = "①"
+       | "②"
+        (中略)
+       | "⑩"

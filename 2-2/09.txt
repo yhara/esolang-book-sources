@@ -1,0 +1,8 @@
+# (略)
+expr = if  
+
+if = "✈", expr, "☺", stmts, "☹", stmts, "☻"
+   | "✈", expr, "☺", stmts, "☻"
+   | additive
+
+# (略)

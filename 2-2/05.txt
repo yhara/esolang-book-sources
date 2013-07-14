@@ -1,0 +1,20 @@
+parse = output                  # (1)
+
+output = "♪", expr              # (2)
+       | "✍", expr
+       | expr
+
+expr = additive                 # (3)
+
+additive = multiple, "＋", expr   # (4)
+         | multiple, "−", expr
+         | multiple
+
+multiple = number, "×", multiple
+         | number, "÷", multiple
+         | number
+
+number = "①"
+       | "②"
+        (中略)
+       | "⑩"
