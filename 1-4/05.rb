@@ -10,7 +10,7 @@
       when @s.scan(/ \n /)           then [:dup]
       when @s.scan(/ \t #{NUM}/)     then [:copy, num(@s[1])]
       when @s.scan(/ \n\t/)          then [:swap]
-      when @s.scan(/ \n\n/)	     then [:discard]
+      when @s.scan(/ \n\n/)	         then [:discard]
       when @s.scan(/ \t\n#{NUM}/)    then [:slide, num(@s[1])]
 
       when @s.scan(/\t   /)          then [:add]
