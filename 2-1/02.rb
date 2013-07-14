@@ -34,7 +34,7 @@ class Starry
         push(y)
         push(x)
       when :rotate
-        z, y, x, = pop, pop, pop
+        z, y, x = pop, pop, pop
         push(z)
         push(x)
         push(y)
