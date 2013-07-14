@@ -128,8 +128,8 @@ class Starry
   def find_labels(insns)
     labels = {}
     insns.each_with_index do |(insn, arg), i|
-      raise ProgramError, "ラベル#{arg}が重複しています" if labels[arg]
       if insn == :label
+        raise ProgramError, "ラベル#{arg}が重複しています" if labels[arg]
         labels[arg] = i
       end
     end
