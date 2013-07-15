@@ -1,4 +1,4 @@
-require 'counter'
+require './counter'
 
 ct = Counter.new(2)
 p ct.value
