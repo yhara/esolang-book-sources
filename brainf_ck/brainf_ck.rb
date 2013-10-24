@@ -1,3 +1,4 @@
+# coding: utf-8
 class Brainf_ck
 
   class ProgramError < StandardError; end
