@@ -42,6 +42,24 @@ task :test_bolic do
   end
 end
 
+task :test_practices do
+  cd "_practices/" do
+    assert_equal "Hello, world!\n", `ruby 1-1-1a.rb`
+    assert_equal "Hello, world!", `ruby 1-1-1b.rb`
+    assert_equal File.read("../hq9plus/99bottles.txt"), `ruby 1-1-2.rb`
+    assert_equal File.read("1-1-3a.rb"), `ruby 1-1-3a.rb`
+    assert_equal File.read("1-1-3b.rb"), `ruby 1-1-3b.rb`
+    # it is hard to test hsq9plus.rb ...
+    
+    assert_equal "A", `ruby uncontrollable.rb a.unc`
+    #assert_equal "AAAA", `ruby ../whitespace/bin/whitespace forever_a.ws | head -c 4`
+    
+    assert_equal "Hello, world!", `ruby ../starry/starry.rb hello.sta`
+    #assert_equal "1\n2\n3\n5\n", `ruby ../starry/starry.rb fibs.sta | head -n 4`
+    assert_equal "1\n2\n3\n5\n", `echo 4 | ruby ../starry/starry.rb fibn.sta`
+  end
+end
+
 desc "run test"
 task :test => [
   :test_hq9plus,
@@ -49,6 +67,7 @@ task :test => [
   :test_whitespace,
   :test_starry,
   :test_bolic,
+  :test_practices,
 ]
 
 task :default => :test
